@@ -43,7 +43,7 @@ const BrandDetailsSection = () => {
           alt="layout-object44"
         />
       </div>
-      <div className={Styles.layoutObject2}>
+      <div className={Styles.layoutObject3}>
         <Image
           src="/assets/images/aboutPage/spheres4.png"
           width={79}
