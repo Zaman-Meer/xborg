@@ -44,36 +44,36 @@ const StatisticSection = () => {
             <p>Example* Users registered and using our website</p>
           </div>
           <Image
-            src="/assets/images/aboutPage/spheres2.png"
-            alt=""
+            src="/assets/images/aboutPage/Spheres2.png"
+            alt="object1"
             width={45}
             height={45}
             className={Styles.layoutObject1}
           />
           <Image
-            src="/assets/images/aboutPage/spheres2.png"
-            alt=""
+            src="/assets/images/aboutPage/Spheres2.png"
+            alt="object2"
             width={45}
             height={45}
             className={Styles.layoutObject2}
           />
           <Image
-            src="/assets/images/aboutPage/spheres2.png"
-            alt=""
+            src="/assets/images/aboutPage/Spheres2.png"
+            alt="object3"
             width={25}
             height={25}
             className={Styles.layoutObject3}
           />
           <Image
-            src="/assets/images/aboutPage/spheres2.png"
-            alt=""
+            src="/assets/images/aboutPage/Spheres2.png"
+            alt="object4"
             width={45}
             height={45}
             className={Styles.layoutObject4}
           />
           <Image
-            src="/assets/images/aboutPage/spheres2.png"
-            alt=""
+            src="/assets/images/aboutPage/Spheres2.png"
+            alt="object5"
             width={45}
             height={45}
             className={Styles.layoutObject5}
