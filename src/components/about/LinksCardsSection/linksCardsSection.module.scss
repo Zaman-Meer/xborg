@@ -1,0 +1,138 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 120px 16px;
+  background-color: var(--black-color);
+
+  .innerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+    .card {
+      width: 100%;
+      max-width: 590px;
+      border-radius: 16px;
+      border: 1px solid #343434;
+      background: rgba(9, 9, 9, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      p {
+        font-family: Lexend;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        color: var(--secondary-text-color);
+      }
+      h4 {
+        font-family: Lexend;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: var(--main-text-color);
+      }
+    }
+    .card1 {
+      background-image: url("/assets/images/aboutPage/x3dIcon.png");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: left top;
+
+      .card1Content {
+        margin-left: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 24px;
+        p {
+          color: var(--main-brand-color);
+        }
+        h4 {
+          width: 100%;
+          max-width: 311px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+    .card2 {
+      background-image: url("/assets/images/aboutPage/robo1.png");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: bottom right;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 48px;
+      .card2Top {
+        width: 100%;
+        max-width: 229px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 24px;
+      }
+      .card2Bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 24px;
+      }
+    }
+    .card3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 24px;
+
+      .card3Top {
+        width: 100%;
+        max-width: 311px;
+        p {
+          margin-bottom: 24px;
+        }
+      }
+      .card3Bottom {
+        display: flex;
+        justify-content: flex-start;
+        align-self: flex-start;
+        gap: 24px;
+      }
+    }
+    .card4 {
+      background-image: url("/assets/images/aboutPage/aboutImage6.png");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: bottom right;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    @media screen and (max-width: 425px) {
+      .card1 {
+        background-size: 50%;
+        .card1Content {
+          margin-left: 0;
+          margin-top: 30%;
+        }
+      }
+      .card2 {
+        background-size: 50%;
+        .card2Bottom {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

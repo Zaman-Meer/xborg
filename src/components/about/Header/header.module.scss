@@ -1,0 +1,98 @@
+.container {
+  position: relative;
+  width: 100%;
+  background-color: var(--black-color);
+  min-height: 718px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url("/assets/images/aboutPage/aboutImage2.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: top left;
+  padding-bottom: 20px;
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .leftContent {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 200px;
+      z-index: 2;
+      .content {
+        width: 100%;
+        max-width: 648px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        p:nth-of-type(1) {
+          color: var(--main-brand-color);
+          font-family: Lexend;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+        h1 {
+          color: var(--main-text-color);
+          font-family: Integral CF;
+          font-size: 64px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 64px;
+          margin-top: 21px;
+          margin-bottom: 24px;
+        }
+        p:nth-of-type(2) {
+          color: var(--secondary-text-color);
+          font-family: Lexend;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 20px;
+          margin-bottom: 64px;
+        }
+        @media screen and (max-width: 768px) {
+          h1 {
+            font-size: 48px;
+            line-height: 48px;
+          }
+        }
+      }
+    }
+    .rightContent {
+      position: relative;
+      width: 50%;
+      height: 100%;
+      min-height: 718px;
+      background-image: url("/assets/images/aboutPage/aboutImage4.png");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: right 35% bottom 50%;
+      background-size: contain;
+      text-align: right;
+      background-color: transparent;
+      z-index: 1;
+      .layoutImage {
+        width: 100%;
+        min-height: 718px;
+        background-color: transparent;
+        background-image: url("/assets/images/aboutPage/aboutImage1.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right 0 bottom 0;
+      }
+    }
+  }
+}

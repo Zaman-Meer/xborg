@@ -1,0 +1,46 @@
+.container {
+  z-index: 10;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 40px;
+  background-color: transparent;
+  .centerTabContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+    margin-left: auto;
+
+    .link {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      color: var(--white-color);
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+      margin-left: 0;
+      .link {
+        display: none;
+      }
+    }
+  }
+  .rightTabContainer {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

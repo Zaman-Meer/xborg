@@ -1,0 +1,157 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 120px 16px 38px 16px;
+  background: #101010;
+
+  .innerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 136px;
+    .line {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.3) -1.73%,
+          rgba(0, 0, 0, 0) 66.12%
+        ),
+        #343434;
+    }
+
+    .leftContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 128px;
+      .topBox {
+        width: 100%;
+        max-width: 275px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 32px;
+        p {
+          font-family: Lexend;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+          color: var(--secondary-text-color);
+        }
+      }
+      .bottomBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .iconsBox {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 9.5px;
+        }
+        .line {
+          display: none;
+        }
+      }
+    }
+    .rightContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 57px;
+      .link {
+        font-family: Lexend;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        text-decoration: none;
+        color: var(--main-text-color);
+      }
+      .linksContainer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 24px;
+
+        .linkList {
+          width: 100%;
+          max-width: 180px;
+          min-width: 180px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 16px;
+          p {
+            font-family: Lexend;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+            color: var(--main-brand-color);
+          }
+        }
+      }
+      .rightBottomBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 16px;
+        .innerBox {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          span {
+            font-family: Lexend;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            color: var(--secondary-text-color);
+          }
+          .linkBox {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 32px;
+          }
+          @media screen and (max-width: 768px) {
+            .linkBox {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      gap: 0;
+      .leftContainer {
+        width: 100%;
+        gap: 24px;
+        .bottomBox {
+          width: 100%;
+          .line {
+            display: block;
+            margin: 24px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  .innerContainer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    span {
+      text-align: center;
+      font-family: Lexend;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      background: #360505;
+      background: linear-gradient(
+        to right,
+        #360505 0%,
+        #eb3a4a 50%,
+        #360505 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &:hover {
+      margin-top: 2px;
+    }
+  }
+}
