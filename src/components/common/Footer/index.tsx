@@ -19,7 +19,7 @@ const Footer = () => {
             </Link>
             <p>
               A collaborative credential infrastructure powering the next
-              generation of gaming with the world's leading esports teams.
+              generation of gaming with the world&apos;s leading esports teams.
             </p>
           </div>
           <div className={Styles.bottomBox}>
