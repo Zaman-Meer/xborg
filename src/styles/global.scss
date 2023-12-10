@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap");
 @font-face {
   font-family: "Integral CF";
   src: url("/assets/fonts/IntegralCF-Bold.woff2");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 
 * {
@@ -15,7 +17,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: "Lexend", "Integral CF", "Courier New", monospace;
+  font-family: Lexend, "Integral CF", "Courier New", sans-serif;
   color: var(--secondary-text-color);
   background-color: var(--black-color);
   scroll-behavior: smooth;

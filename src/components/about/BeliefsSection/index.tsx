@@ -10,7 +10,7 @@ const BeliefsSection = () => {
         src="/assets/images/aboutPage/spheres.png"
         width={80}
         height={108}
-        alt="layout-image1"
+        alt="layout-image14"
         className={Styles.layoutImage}
       />
 

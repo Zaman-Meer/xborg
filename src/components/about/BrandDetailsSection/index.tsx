@@ -31,21 +31,21 @@ const BrandDetailsSection = () => {
         src="/assets/images/aboutPage/spheres4.png"
         width={57}
         height={57}
-        alt="layout-object1"
+        alt="layout-object11"
         className={Styles.layoutObject1}
       />
       <Image
         src="/assets/images/aboutPage/spheres4.png"
         width={73}
         height={73}
-        alt="layout-object4"
+        alt="layout-object44"
         className={Styles.layoutObject2}
       />
       <Image
         src="/assets/images/aboutPage/spheres4.png"
         width={79}
         height={79}
-        alt="layout-object3"
+        alt="layout-object33"
         className={Styles.layoutObject3}
       />
     </div>
