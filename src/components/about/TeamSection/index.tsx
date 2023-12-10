@@ -1,135 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import Styles from "./teamSection.module.scss";
 import Image from "next/image";
 import Button from "@/components/common/Button";
 import { TeamMember } from "@/types";
 import TeamMemberModal from "./TeamMemberModal";
+import { TeamData } from "@/common/constant";
+import Styles from "./teamSection.module.scss";
 
 const Tabs = ["All", "Product", "Tech", "Design", "Ops", "Advise"];
-
-const TeamData: TeamMember[] = [
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p9.png",
-    department: "ops",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p10.png",
-    department: "ops",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p14.png",
-    department: "ops",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p13.png",
-    department: "ops",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p19.png",
-    department: "advisors",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p20.png",
-    department: "advisors",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p16.png",
-    department: "advisors",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p17.png",
-    department: "advisors",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p5.png",
-    department: "tech",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p3.png",
-    department: "tech",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p4.png",
-    department: "tech",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p12.png",
-    department: "advisors",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p15.png",
-    department: "advisors",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p11.png",
-    department: "advisors",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p8.png",
-    department: "design",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p7.png",
-    department: "design",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p6.png",
-    department: "design",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p18.png",
-    department: "advisors",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p2.png",
-    department: "product",
-  },
-  {
-    name: "Breno Lennard",
-    intro: "Lorem ipsum dolor sit amet",
-    photoUrl: "/assets/images/team/p1.png",
-    department: "product",
-  },
-];
 
 const TeamSection = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -156,7 +34,7 @@ const TeamSection = () => {
     return () => {
       window.removeEventListener("resize", checkWindowSize);
     };
-  }, []);
+  }, [team?.length]);
 
   const handleTeamMemberClick = (index: number) => {
     setSelectedMember(TeamData[index]);
@@ -199,6 +77,7 @@ const TeamSection = () => {
 
     return config;
   };
+
   // Filter team members based on the selected tab and department
   const filteredTeam =
     activeTab === 0
@@ -210,7 +89,7 @@ const TeamSection = () => {
 
   useEffect(() => {
     setTeam(filteredTeam); // Update the team based on the selected tab and department
-  }, [activeTab]);
+  }, [activeTab, filteredTeam]);
 
   const renderGridItems = () => {
     const columnConfig =

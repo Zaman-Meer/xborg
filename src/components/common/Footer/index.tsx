@@ -1,89 +1,7 @@
 import Image from "next/image";
 import Styles from "./footer.module.scss";
 import Link from "next/link";
-
-const LinksData = [
-  {
-    type: "ECOSYSTEM",
-    links: [
-      {
-        name: "Infrastructure",
-        to: "",
-      },
-      {
-        name: "Applications",
-        to: "",
-      },
-      {
-        name: "Roadmap",
-        to: "",
-      },
-      {
-        name: "$XBG",
-        to: "",
-      },
-    ],
-  },
-  {
-    type: "Products",
-    links: [
-      {
-        name: "GamerBase",
-        to: "",
-      },
-      {
-        name: "Launchpad",
-        to: "",
-      },
-      {
-        name: "Explorer",
-        to: "",
-      },
-    ],
-  },
-  {
-    type: "Community",
-    links: [
-      {
-        name: "Hub",
-        to: "",
-      },
-      {
-        name: "Prometheus",
-        to: "",
-      },
-      {
-        name: "Governance",
-        to: "",
-      },
-      {
-        name: "Esports",
-        to: "",
-      },
-    ],
-  },
-  {
-    type: "Company",
-    links: [
-      {
-        name: "About",
-        to: "/about",
-      },
-      {
-        name: "Blog",
-        to: "",
-      },
-      {
-        name: "FAQ",
-        to: "",
-      },
-      {
-        name: "Careers",
-        to: "",
-      },
-    ],
-  },
-];
+import { FooterLinksData } from "@/common/constant";
 
 const Footer = () => {
   return (
@@ -143,7 +61,7 @@ const Footer = () => {
         </div>
         <div className={Styles.rightContainer}>
           <div className={Styles.linksContainer}>
-            {LinksData?.map((linkData, index: number) => (
+            {FooterLinksData?.map((linkData, index: number) => (
               <div key={index} className={Styles.linkList}>
                 <p>{linkData?.type}</p>
                 {linkData.links.map((link, i: number) => (
@@ -157,7 +75,7 @@ const Footer = () => {
           <div className={Styles.rightBottomBox}>
             <div className={Styles.line} />
             <div className={Styles.innerBox}>
-              <span>© XBorg. 2023 — All rights reserved.</span>
+              <span>© XBorg. 2023 — All rights reserved.&rsquo;</span>
               <div className={Styles.linkBox}>
                 <Link href="" className={Styles.link}>
                   Privacy Policy

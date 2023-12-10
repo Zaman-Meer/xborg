@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Styles from "./linksCardsSection.module.scss";
 import Button from "@/components/common/Button";
 import LinkButton from "@/components/common/LinkButton";

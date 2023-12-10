@@ -1,4 +1,4 @@
-import img from "next/image";
+import Image from "next/image";
 import Styles from "./statisticSection.module.scss";
 
 const StatisticSection = () => {
@@ -14,49 +14,64 @@ const StatisticSection = () => {
         <div className={Styles.cardContainer}>
           <div className={Styles.card}>
             <p>more than</p>
-            <img src="/assets/images/aboutPage/20.png" alt="" />
+            <Image
+              src="/assets/images/aboutPage/20.png"
+              alt="20"
+              width={150}
+              height={80}
+            />
             <p>Example* Esports team already using platform</p>
           </div>
           <div className={Styles.card}>
             <p>more than</p>
-            <img src="/assets/images/aboutPage/400k.png" alt="" />
+            <Image
+              src="/assets/images/aboutPage/400k.png"
+              alt="400k"
+              width={200}
+              height={80}
+            />
             <p>Example* Credentials added to our website</p>
           </div>
 
           <div className={Styles.card}>
             <p>more than</p>
-            <img src="/assets/images/aboutPage/1m.png" alt="" />
+            <Image
+              src="/assets/images/aboutPage/1m.png"
+              alt="1m"
+              width={150}
+              height={80}
+            />
             <p>Example* Users registered and using our website</p>
           </div>
-          <img
+          <Image
             src="/assets/images/aboutPage/spheres2.png"
             alt=""
             width={45}
             height={45}
             className={Styles.layoutObject1}
           />
-          <img
+          <Image
             src="/assets/images/aboutPage/spheres2.png"
             alt=""
             width={45}
             height={45}
             className={Styles.layoutObject2}
           />
-          <img
+          <Image
             src="/assets/images/aboutPage/spheres2.png"
             alt=""
             width={25}
             height={25}
             className={Styles.layoutObject3}
           />
-          <img
+          <Image
             src="/assets/images/aboutPage/spheres2.png"
             alt=""
             width={45}
             height={45}
             className={Styles.layoutObject4}
           />
-          <img
+          <Image
             src="/assets/images/aboutPage/spheres2.png"
             alt=""
             width={45}
