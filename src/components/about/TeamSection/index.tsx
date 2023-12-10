@@ -172,34 +172,34 @@ const TeamSection = () => {
       )}
       <div className={Styles.layoutObject1}>
         <Image
-          src="/assets/images/aboutPage/spheres.png"
+          src="/assets/images/aboutPage/Spheres.png"
           width={40}
           height={50}
-          alt="layout-object"
+          alt="layout-object1"
         />
       </div>
       <div className={Styles.layoutObject2}>
         <Image
-          src="/assets/images/aboutPage/spheres3.png"
+          src="/assets/images/aboutPage/Spheres3.png"
           width={100}
           height={100}
-          alt="layout-object"
+          alt="layout-object2"
         />
       </div>
       <div className={Styles.layoutObject4}>
         <Image
-          src="/assets/images/aboutPage/spheres4.png"
+          src="/assets/images/aboutPage/Spheres4.png"
           width={62}
           height={62}
-          alt="layout-object"
+          alt="layout-object3"
         />
       </div>
       <div className={Styles.layoutObject5}>
         <Image
-          src="/assets/images/aboutPage/spheres4.png"
+          src="/assets/images/aboutPage/Spheres4.png"
           width={40}
           height={40}
-          alt="layout-object"
+          alt="layout-object4"
         />
       </div>
       <div className={Styles.layoutObject6}>
@@ -207,7 +207,7 @@ const TeamSection = () => {
           src="/assets/images/aboutPage/spheres5.png"
           width={84}
           height={84}
-          alt="layout-object"
+          alt="layout-object5"
         />
       </div>
     </div>
