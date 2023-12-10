@@ -11,35 +11,30 @@ const PartnersSection = () => {
           src="/assets/vectors/partnersBrandsIcons/swiss-borg.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="polygon"
           src="/assets/vectors/partnersBrandsIcons/polygon.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="myria"
           src="/assets/vectors/partnersBrandsIcons/myria.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="brave"
           src="/assets/vectors/partnersBrandsIcons/brave.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="immutable"
           src="/assets/vectors/partnersBrandsIcons/immutable.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
       </div>
       <div className={Styles.logContainer}>
@@ -48,42 +43,36 @@ const PartnersSection = () => {
           src="/assets/vectors/partnersBrandsIcons/heroic.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="team-liquid"
           src="/assets/vectors/partnersBrandsIcons/team-liquid.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="tezos"
           src="/assets/vectors/partnersBrandsIcons/tezos.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="plr"
           src="/assets/vectors/partnersBrandsIcons/plr.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="ultra"
           src="/assets/vectors/partnersBrandsIcons/ultra.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="mantle"
           src="/assets/vectors/partnersBrandsIcons/mantle.svg"
           width={120}
           height={40}
-          objectFit="contain"
         />
         <Image
           alt="zilliqa"
@@ -91,7 +80,6 @@ const PartnersSection = () => {
           width={120}
           height={40}
           layout=""
-          objectFit="contain"
         />
       </div>
       <div className={Styles.bottomLogoContainer}>
@@ -102,7 +90,6 @@ const PartnersSection = () => {
           width={120}
           height={40}
           layout=""
-          objectFit="contain"
         />
 
         <Image
@@ -111,7 +98,6 @@ const PartnersSection = () => {
           width={120}
           height={40}
           layout=""
-          objectFit="contain"
         />
         <Image
           alt="shield"
@@ -119,7 +105,6 @@ const PartnersSection = () => {
           width={120}
           height={40}
           layout=""
-          objectFit="contain"
         />
         <Image
           alt="aave"
@@ -127,7 +112,6 @@ const PartnersSection = () => {
           width={120}
           height={40}
           layout=""
-          objectFit="contain"
         />
         <Image
           alt="faceit"
@@ -135,7 +119,6 @@ const PartnersSection = () => {
           width={120}
           height={40}
           layout=""
-          objectFit="contain"
         />
       </div>
     </div>

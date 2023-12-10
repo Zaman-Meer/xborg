@@ -75,7 +75,9 @@ const Footer = () => {
           <div className={Styles.rightBottomBox}>
             <div className={Styles.line} />
             <div className={Styles.innerBox}>
-              <span>&apos;&copy; XBorg. 2023 - All rights reserved.&apos;</span>
+              <span>
+                &copy; XBorg. 2023 &mdash; All rights reserved.&rsquo;
+              </span>
               <div className={Styles.linkBox}>
                 <Link href="" className={Styles.link}>
                   Privacy Policy

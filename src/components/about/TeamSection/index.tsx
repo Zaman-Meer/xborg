@@ -7,6 +7,62 @@ import TeamMemberModal from "./TeamMemberModal";
 import { TeamData } from "@/common/constant";
 import Styles from "./teamSection.module.scss";
 
+const getColumnConfig = (teamLength: number) => {
+  const config = [];
+
+  if (teamLength === 1) {
+    config.push(1);
+  } else if (teamLength === 2) {
+    config.push(1, 2);
+  } else {
+    config.push(2);
+
+    let remainingMembers = teamLength - 4; // 2 members at start and end
+    const middleIndex = Math.floor(teamLength / 2);
+    let hasAddedFour = false;
+
+    while (remainingMembers > 0) {
+      if (
+        remainingMembers >= 4 &&
+        !hasAddedFour &&
+        config.length >= middleIndex
+      ) {
+        config.push(4);
+        remainingMembers -= 4;
+        hasAddedFour = true;
+      } else {
+        const columnSize = Math.min(remainingMembers, 3);
+        config.push(columnSize);
+        remainingMembers -= columnSize;
+      }
+    }
+  }
+
+  return config;
+};
+
+interface MemberPhotoProps {
+  member: TeamMember;
+  onClick: (member: TeamMember) => void;
+}
+const MemberPhoto = ({ member, onClick }: MemberPhotoProps) => {
+  return (
+    <div
+      className={Styles.gridItem}
+      onClick={() => {
+        onClick(member);
+      }}
+    >
+      <Image
+        src={member?.photoUrl}
+        width={100}
+        height={100}
+        alt={member?.name}
+      />
+    </div>
+  );
+};
+
 const Tabs = ["All", "Product", "Tech", "Design", "Ops", "Advise"];
 
 const TeamSection = () => {
@@ -36,46 +92,13 @@ const TeamSection = () => {
     };
   }, [team?.length]);
 
-  const handleTeamMemberClick = (index: number) => {
-    setSelectedMember(TeamData[index]);
+  const handleTeamMemberClick = (member: TeamMember) => {
+    console.log("Member", member);
+    setSelectedMember(member);
   };
 
   const closePopup = () => {
     setSelectedMember(null);
-  };
-
-  const getColumnConfig = (teamLength: number) => {
-    const config = [];
-
-    if (teamLength === 1) {
-      config.push(1);
-    } else if (teamLength === 2) {
-      config.push(1, 2);
-    } else {
-      config.push(2);
-
-      let remainingMembers = teamLength - 4; // 2 members at start and end
-      const middleIndex = Math.floor(teamLength / 2);
-      let hasAddedFour = false;
-
-      while (remainingMembers > 0) {
-        if (
-          remainingMembers >= 4 &&
-          !hasAddedFour &&
-          config.length >= middleIndex
-        ) {
-          config.push(4);
-          remainingMembers -= 4;
-          hasAddedFour = true;
-        } else {
-          const columnSize = Math.min(remainingMembers, 3);
-          config.push(columnSize);
-          remainingMembers -= columnSize;
-        }
-      }
-    }
-
-    return config;
   };
 
   // Filter team members based on the selected tab and department
@@ -106,26 +129,15 @@ const TeamSection = () => {
               paddingTop: columnIndex % 2 === 0 ? "40px" : "",
             }}
           >
-            {Array.from({ length: columnSize }).map(() => (
-              <div
-                key={teamIndex}
-                className={Styles.gridItem}
-                onClick={() => handleTeamMemberClick(teamIndex)}
-              >
-                <Image
-                  src={TeamData[teamIndex]?.photoUrl}
-                  width={100}
-                  height={100}
-                  alt={TeamData[teamIndex]?.name}
+            {Array.from({ length: columnSize }).map((_, index) => (
+              <>
+                <MemberPhoto
+                  key={teamIndex}
+                  member={TeamData[teamIndex]}
+                  onClick={handleTeamMemberClick}
                 />
-                <div
-                  style={{
-                    display: "none",
-                  }}
-                >
-                  {teamIndex++}
-                </div>
-              </div>
+                <div style={{ display: "none" }}>{teamIndex++}</div>
+              </>
             ))}
           </div>
         ))}
