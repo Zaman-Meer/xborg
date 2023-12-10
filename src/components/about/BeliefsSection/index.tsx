@@ -6,13 +6,14 @@ import { CardData } from "@/common/constant";
 const BeliefsSection = () => {
   return (
     <div className={Styles.container}>
-      <Image
-        src="/assets/images/aboutPage/spheres.png"
-        width={80}
-        height={108}
-        alt="layout-image14"
-        className={Styles.layoutImage}
-      />
+      <div className={Styles.layoutImage}>
+        <Image
+          src="/assets/images/aboutPage/Spheres.png"
+          width={80}
+          height={108}
+          alt="layout-image1"
+        />
+      </div>
 
       <div className={Styles.content}>
         <h1>Our beliefs</h1>
