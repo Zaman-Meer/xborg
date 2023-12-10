@@ -29,7 +29,7 @@ const BrandDetailsSection = () => {
       </div>
       <div className={Styles.layoutObject1}>
         <Image
-          src="/assets/images/aboutPage/spheres4.png"
+          src="/assets/images/aboutPage/Spheres4.png"
           width={57}
           height={57}
           alt="layout-object11"
@@ -37,7 +37,7 @@ const BrandDetailsSection = () => {
       </div>
       <div className={Styles.layoutObject2}>
         <Image
-          src="/assets/images/aboutPage/spheres4.png"
+          src="/assets/images/aboutPage/Spheres4.png"
           width={73}
           height={73}
           alt="layout-object44"
@@ -45,7 +45,7 @@ const BrandDetailsSection = () => {
       </div>
       <div className={Styles.layoutObject3}>
         <Image
-          src="/assets/images/aboutPage/spheres4.png"
+          src="/assets/images/aboutPage/Spheres4.png"
           width={79}
           height={79}
           alt="layout-object33"
