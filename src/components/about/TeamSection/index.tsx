@@ -93,7 +93,6 @@ const TeamSection = () => {
   }, [team?.length]);
 
   const handleTeamMemberClick = (member: TeamMember) => {
-    console.log("Member", member);
     setSelectedMember(member);
   };
 
@@ -171,43 +170,46 @@ const TeamSection = () => {
       {selectedMember && (
         <TeamMemberModal member={selectedMember} onClose={closePopup} />
       )}
-
-      <Image
-        src="/assets/images/aboutPage/spheres.png"
-        width={40}
-        height={50}
-        alt="layout-object"
-        className={Styles.layoutObject1}
-      />
-      <Image
-        src="/assets/images/aboutPage/spheres3.png"
-        width={100}
-        height={100}
-        alt="layout-object"
-        className={Styles.layoutObject2}
-      />
-
-      <Image
-        src="/assets/images/aboutPage/spheres4.png"
-        width={62}
-        height={62}
-        alt="layout-object"
-        className={Styles.layoutObject4}
-      />
-      <Image
-        src="/assets/images/aboutPage/spheres4.png"
-        width={40}
-        height={40}
-        alt="layout-object"
-        className={Styles.layoutObject5}
-      />
-      <Image
-        src="/assets/images/aboutPage/spheres5.png"
-        width={84}
-        height={84}
-        alt="layout-object"
-        className={Styles.layoutObject6}
-      />
+      <div className={Styles.layoutObject1}>
+        <Image
+          src="/assets/images/aboutPage/spheres.png"
+          width={40}
+          height={50}
+          alt="layout-object"
+        />
+      </div>
+      <div className={Styles.layoutObject2}>
+        <Image
+          src="/assets/images/aboutPage/spheres3.png"
+          width={100}
+          height={100}
+          alt="layout-object"
+        />
+      </div>
+      <div className={Styles.layoutObject4}>
+        <Image
+          src="/assets/images/aboutPage/spheres4.png"
+          width={62}
+          height={62}
+          alt="layout-object"
+        />
+      </div>
+      <div className={Styles.layoutObject5}>
+        <Image
+          src="/assets/images/aboutPage/spheres4.png"
+          width={40}
+          height={40}
+          alt="layout-object"
+        />
+      </div>
+      <div className={Styles.layoutObject6}>
+        <Image
+          src="/assets/images/aboutPage/spheres5.png"
+          width={84}
+          height={84}
+          alt="layout-object"
+        />
+      </div>
     </div>
   );
 };
