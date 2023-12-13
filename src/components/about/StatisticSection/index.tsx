@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Styles from "./statisticSection.module.scss";
+import FlashlightCursorWrapper from "@/components/common/FlashlightCursorWrapper";
 
 const StatisticSection = () => {
   return (
@@ -12,7 +13,7 @@ const StatisticSection = () => {
           finibus, feugiat nunc ut, lobortis metus
         </p>
         <div className={Styles.cardContainer}>
-          <div className={Styles.card}>
+          <FlashlightCursorWrapper className={Styles.card}>
             <p>more than</p>
             <Image
               src="/assets/images/aboutPage/20.png"
@@ -21,8 +22,8 @@ const StatisticSection = () => {
               height={80}
             />
             <p>Example* Esports team already using platform</p>
-          </div>
-          <div className={Styles.card}>
+          </FlashlightCursorWrapper>
+          <FlashlightCursorWrapper className={Styles.card}>
             <p>more than</p>
             <Image
               src="/assets/images/aboutPage/400k.png"
@@ -31,9 +32,8 @@ const StatisticSection = () => {
               height={80}
             />
             <p>Example* Credentials added to our website</p>
-          </div>
-
-          <div className={Styles.card}>
+          </FlashlightCursorWrapper>
+          <FlashlightCursorWrapper className={Styles.card}>
             <p>more than</p>
             <Image
               src="/assets/images/aboutPage/1m.png"
@@ -42,7 +42,8 @@ const StatisticSection = () => {
               height={80}
             />
             <p>Example* Users registered and using our website</p>
-          </div>
+          </FlashlightCursorWrapper>
+
           <Image
             src="/assets/images/aboutPage/Spheres2.png"
             alt="object1"

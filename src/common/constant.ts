@@ -92,7 +92,7 @@ export const TeamData: TeamMember[] = [
     name: "Breno Lennard",
     intro: "Lorem ipsum dolor sit amet",
     photoUrl: "/assets/images/team/p12.png",
-    department: "advisors",
+    department: "product",
   },
   {
     name: "Breno Lennard",
@@ -104,7 +104,7 @@ export const TeamData: TeamMember[] = [
     name: "Breno Lennard",
     intro: "Lorem ipsum dolor sit amet",
     photoUrl: "/assets/images/team/p11.png",
-    department: "advisors",
+    department: "product",
   },
   {
     name: "Breno Lennard",

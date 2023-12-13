@@ -8,6 +8,8 @@
 
   .innerContainer {
     display: flex;
+    width: 100%;
+    max-width: 1210px;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -20,6 +22,10 @@
       background: rgba(9, 9, 9, 0.8);
       backdrop-filter: blur(10px);
       padding: 40px;
+      overflow: hidden;
+      &:hover {
+        border: 1px solid var(--main-brand-color);
+      }
       p {
         font-family: Lexend;
         font-size: 16px;
@@ -36,13 +42,16 @@
         line-height: normal;
         color: var(--main-text-color);
       }
+      @media screen and (max-width: 1240px) {
+        max-width: 100%;
+      }
     }
+
     .card1 {
       background-image: url("/assets/images/aboutPage/x3dIcon.png");
       background-repeat: no-repeat;
       background-attachment: scroll;
       background-position: left top;
-
       .card1Content {
         margin-left: 35%;
         display: flex;
@@ -119,7 +128,7 @@
       align-items: flex-start;
       gap: 12px;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 550px) {
       .card1 {
         background-size: 50%;
         .card1Content {
@@ -128,7 +137,8 @@
         }
       }
       .card2 {
-        background-size: 50%;
+        background-size: 70%;
+        background-position: bottom -20px right -20px;
         .card2Bottom {
           flex-direction: column;
         }

@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: top left;
+  background-size: 60%;
   padding-bottom: 20px;
   .content {
     width: 100%;
@@ -22,9 +23,9 @@
     .leftContent {
       width: 50%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: flex-start;
-      padding-left: 16px;
+      padding-left: 5%;
       padding-right: 16px;
       padding-top: 200px;
       z-index: 2;
@@ -70,6 +71,9 @@
           }
         }
       }
+      @media screen and (max-width: 768px) {
+        padding-top: 100px;
+      }
     }
     .rightContent {
       position: relative;
@@ -85,6 +89,9 @@
       background-color: transparent;
       z-index: 1;
       .layoutImage {
+        position: absolute;
+        right: 0;
+        bottom: 0;
         width: 100%;
         min-height: 718px;
         background-color: transparent;
@@ -92,7 +99,21 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: right 0 bottom 0;
+        @media screen and (max-width: 768px) {
+          background-size: 80%;
+        }
       }
+      @media screen and (max-width: 768px) {
+        min-height: 600px;
+        min-height: 600px;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    background-size: 80%;
+    .rightContent {
+      min-height: 500px;
+      min-height: 500px;
     }
   }
 }

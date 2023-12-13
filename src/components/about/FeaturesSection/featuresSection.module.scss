@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: bottom right;
+
   h1 {
     width: 100%;
     max-width: 434px;
@@ -23,6 +24,7 @@
     color: var(--main-text-color);
   }
   .card {
+    position: relative;
     width: 100%;
     max-width: 387px;
     min-height: 262px;
@@ -36,6 +38,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 16px;
+    overflow: hidden;
+    &:hover {
+      border: 1px solid var(--main-brand-color);
+    }
     h3 {
       color: var(--main-text-color);
       font-family: Lexend;
@@ -74,5 +80,12 @@
         padding-top: 0;
       }
     }
+  }
+  @media screen and (max-width: 768px) {
+    background-size: 110%;
+    padding-bottom: 120px;
+  }
+  @media screen and (min-width: 1441px) {
+    background-size: 100%;
   }
 }

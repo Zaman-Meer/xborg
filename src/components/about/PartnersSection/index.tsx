@@ -41,7 +41,7 @@ const PartnersSection = () => {
         <Image
           alt="heroic"
           src="/assets/vectors/partnersBrandsIcons/heroic.svg"
-          width={120}
+          width={40}
           height={40}
         />
         <Image
@@ -59,7 +59,7 @@ const PartnersSection = () => {
         <Image
           alt="plr"
           src="/assets/vectors/partnersBrandsIcons/plr.svg"
-          width={120}
+          width={40}
           height={40}
         />
         <Image
@@ -71,13 +71,13 @@ const PartnersSection = () => {
         <Image
           alt="mantle"
           src="/assets/vectors/partnersBrandsIcons/mantle.svg"
-          width={120}
-          height={40}
+          width={131}
+          height={55}
         />
         <Image
           alt="zilliqa"
           src="/assets/vectors/partnersBrandsIcons/zilliqa.svg"
-          width={120}
+          width={40}
           height={40}
           layout=""
         />
@@ -102,7 +102,7 @@ const PartnersSection = () => {
         <Image
           alt="shield"
           src="/assets/vectors/partnersBrandsIcons/shield.svg"
-          width={120}
+          width={40}
           height={40}
           layout=""
         />

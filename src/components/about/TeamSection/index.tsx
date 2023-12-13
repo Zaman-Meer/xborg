@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import Image from "next/image";
 import Button from "@/components/common/Button";
 import { TeamMember } from "@/types";
@@ -41,41 +41,49 @@ const getColumnConfig = (teamLength: number) => {
   return config;
 };
 
+const Tabs = ["All", "Product", "Tech", "Design", "Ops", "Advisors"];
 interface MemberPhotoProps {
+  activeTab: number;
   member: TeamMember;
   onClick: (member: TeamMember) => void;
 }
-const MemberPhoto = ({ member, onClick }: MemberPhotoProps) => {
+const MemberPhoto = ({ activeTab, member, onClick }: MemberPhotoProps) => {
   return (
     <div
-      className={Styles.gridItem}
+      className={`${Styles.gridItem} ${
+        activeTab !== 0 &&
+        member?.department !== Tabs[activeTab]?.toLocaleLowerCase() &&
+        Styles.blur
+      } ${
+        member?.department === Tabs[activeTab]?.toLocaleLowerCase() &&
+        Styles.overlay
+      }`}
       onClick={() => {
         onClick(member);
       }}
     >
       <Image
         src={member?.photoUrl}
-        width={100}
-        height={100}
+        fill
+        sizes="(min-width: 1440) 250px, 100px"
         alt={member?.name}
       />
     </div>
   );
 };
 
-const Tabs = ["All", "Product", "Tech", "Design", "Ops", "Advise"];
-
 const TeamSection = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const [team, setTeam] = useState([...TeamData]);
   const [isMobileView, setIsMobileView] = useState(false);
+  const [isTabletView, setIsTabletView] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null); // Track the selected member for the popup
 
   useEffect(() => {
     const checkWindowSize = () => {
-      setIsMobileView(window.innerWidth <= 426);
-      if (team?.length > 6 && window.innerWidth <= 426) {
+      setIsMobileView(window.innerWidth <= 495);
+      setIsTabletView(window.innerWidth <= 768);
+      if (TeamData?.length > 6 && window.innerWidth <= 768) {
         setShowMore(true);
       }
     };
@@ -90,7 +98,7 @@ const TeamSection = () => {
     return () => {
       window.removeEventListener("resize", checkWindowSize);
     };
-  }, [team?.length]);
+  }, [TeamData?.length]);
 
   const handleTeamMemberClick = (member: TeamMember) => {
     setSelectedMember(member);
@@ -100,27 +108,43 @@ const TeamSection = () => {
     setSelectedMember(null);
   };
 
-  // Filter team members based on the selected tab and department
-  const filteredTeam =
-    activeTab === 0
-      ? TeamData
-      : TeamData.filter(
-          (member) =>
-            member.department.toLowerCase() === Tabs[activeTab].toLowerCase()
-        );
-
-  useEffect(() => {
-    setTeam(filteredTeam); // Update the team based on the selected tab and department
-  }, [activeTab, filteredTeam]);
-
   const renderGridItems = () => {
-    const columnConfig =
-      isMobileView && showMore ? [3, 3, 3] : getColumnConfig(team?.length);
+    const isMobileTablet = isMobileView || isTabletView;
+    const columnConfig = (): number[] => {
+      if (isMobileTablet) {
+        if (!showMore) {
+          if (isMobileView) {
+            return [
+              Math.ceil(TeamData?.length / 3),
+              Math.ceil(TeamData?.length / 3),
+              Math.ceil(TeamData?.length / 3),
+            ];
+          } else {
+            return [
+              Math.ceil(TeamData?.length / 4),
+              Math.ceil(TeamData?.length / 4),
+              Math.ceil(TeamData?.length / 4),
+              Math.ceil(TeamData?.length / 4),
+            ];
+          }
+        } else if (showMore && isMobileView) {
+          return [3, 3, 3];
+        } else if (showMore && isTabletView) {
+          return [3, 3, 3, 3]; // Adjusted to display 3 columns for tablet view
+        }
+      } else {
+        return getColumnConfig(TeamData?.length);
+      }
+
+      // Default return statement to satisfy TypeScript
+      return [];
+    };
+
     let teamIndex = 0;
 
     return (
       <>
-        {columnConfig.map((columnSize, columnIndex) => (
+        {columnConfig()?.map((columnSize: number, columnIndex: number) => (
           <div
             key={columnIndex}
             className={Styles.gridColumn}
@@ -128,15 +152,18 @@ const TeamSection = () => {
               paddingTop: columnIndex % 2 === 0 ? "40px" : "",
             }}
           >
-            {Array.from({ length: columnSize }).map((_, index) => (
-              <>
-                <MemberPhoto
-                  key={teamIndex}
-                  member={TeamData[teamIndex]}
-                  onClick={handleTeamMemberClick}
-                />
+            {Array.from({ length: columnSize }).map(() => (
+              <Fragment key={teamIndex}>
+                {TeamData[teamIndex] && (
+                  <MemberPhoto
+                    activeTab={activeTab}
+                    key={teamIndex}
+                    member={TeamData[teamIndex]}
+                    onClick={handleTeamMemberClick}
+                  />
+                )}
                 <div style={{ display: "none" }}>{teamIndex++}</div>
-              </>
+              </Fragment>
             ))}
           </div>
         ))}
@@ -146,7 +173,7 @@ const TeamSection = () => {
 
   return (
     <div className={Styles.container}>
-      <h1>Our team</h1>
+      <h1>Our TeamData</h1>
       <div className={Styles.tabsContainer}>
         {Tabs?.map((tab, index: number) => (
           <div
@@ -161,7 +188,7 @@ const TeamSection = () => {
         ))}
       </div>
       <div className={Styles.gridContainer}>{renderGridItems()}</div>
-      {isMobileView && team.length > 6 && (
+      {(isMobileView || isTabletView) && TeamData.length > 6 && (
         <Button variant="outlined" onClick={() => setShowMore(!showMore)}>
           {showMore ? "View All" : "View less"}
         </Button>

@@ -4,7 +4,7 @@ import Footer from "@/components/common/Footer";
 import "../styles/root.scss";
 
 export const metadata: Metadata = {
-  title: "XBorg",
+  title: "XBorg - Revolutionising gaming with credential infrastructure.",
   description: "Empowering players & fans",
 };
 

@@ -8,11 +8,11 @@ import TeamSection from "@/components/about/TeamSection";
 import BrandDetailsSection from "@/components/about/BrandDetailsSection";
 import LinksCardsSection from "@/components/about/LinksCardsSection";
 
-export default function Home() {
+export default function About() {
   return (
     <>
       <Head>
-        <title>About Us- xBorg</title>
+        <title>About Us - xBorg</title>
         <meta
           name="description"
           content="Learn more about our company and what we stand for."
