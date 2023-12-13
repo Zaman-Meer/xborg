@@ -1,4 +1,3 @@
-"use client";
 import LinkButton from "@/components/common/LinkButton";
 import Styles from "./featuresSection.module.scss";
 import FlashlightCursorWrapper from "@/components/common/FlashlightCursorWrapper";
